@@ -1,0 +1,116 @@
+@font-face {
+	font-family: calibri;
+	src: 
+		local('Calibri'),
+url(../fonts/calibri.ttf) 		format('truetype');
+	}
+
+@font-face {
+	font-family: fontana;
+	src: 
+url(../fonts/FontanaNDAaOsF.otf) 		format('opentype');
+	}
+
+@font-face {
+	font-family: italic;
+	src: 
+url(../fonts/calibrii.ttf) 		format('truetype');
+	}
+
+
+a:link 	{
+	color: #d2d2d2;
+	background-color: #737373;
+	text-decoration: none;
+	}
+
+a:hover {
+	color:#fff;
+	text-decoration:none;
+}
+
+a:active {
+	color:#fff;
+	text-decoration:none;
+}
+
+body {
+	color: #d2d2d2;
+	background-color: #737373;
+	margin:0;
+	padding:0;
+	border:0;			/* This removes the border around the viewport in old versions of IE */
+	width:100%;
+	min-width:600px;    /* Minimum width of layout - remove line if not required */
+						/* The min-width property does not work in old versions of Internet Explorer */
+}
+
+#container {
+	margin:0 auto;
+	width: 700px;
+	padding:0;
+	border:0;	
+}
+
+#header {
+	font-family: fontana, Verdana, sans-serif;
+	font-size: 32px;
+	height:10%;
+	padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+	margin: 0px;
+}
+
+#header p,
+#header h1 {
+	position: relative;
+	top: 20px;
+	text-align:left
+}
+
+#sidebar {
+	font-family: fontana, Verdana, sans-serif;
+	font-size: 15px;
+	position: relative;
+	float:left;
+	width: 80px;
+	height:250px;
+	padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+	margin: 0px;
+}
+
+#sidebar p,
+#sidebar dl {
+	position: relative;
+	top: -20px;
+	text-align:left
+}
+
+#content {
+	font-family: 'calibri', Verdana, sans-serif;	
+	font-size: 15px;
+	position: relative;
+	top: 75px; 
+	float:right;
+	width: 550px; 
+	text-align:left;
+	height:95%;
+	padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+	margin: 0px;
+}
+
+
+#footer {
+	clear:both;
+	text-align:center;
+	height:0px;
+	padding:0px;
+}

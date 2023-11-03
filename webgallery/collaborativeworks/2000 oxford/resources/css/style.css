@@ -1,0 +1,151 @@
+/*
+redrex base gallery v1.7
+*/
+body{
+	text-align: center;
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: #fff;
+	color: #494949;
+	font-size: 13px;
+	line-height:120%;
+	outline: 0;
+}
+strong{
+	font-weight:bold;
+}
+.logo{
+    float:left;
+    padding: 10px 20px 10px 20px;
+}
+.clear{
+	clear:both;
+}
+a:link, a:visited{
+	color: #494949;
+	text-decoration: none;
+	font-weight:bold;
+	outline: 0;
+}
+a:hover, a:active  {
+	text-decoration: none;
+	color: #494949;
+}
+p, li {
+	line-height: 1.8em;
+}
+h1 {
+	padding:28px 20px 20px 20px;
+	font-size:26px;
+	color: #3d3d3d;
+	font-family: Helvetica, Arial, sans-serif;
+	float:right;
+}
+h2 {
+	font-size:14px;
+	color:#3d3d3d;
+	padding:5px 20px;
+}
+#galdes{
+    font-size:0.9em;
+    font-style:italic;
+}
+pre {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	overflow-x: auto;
+}
+#wrapper {
+	width: 1280px;
+
+	margin: 0 auto;
+	text-align: left;
+}
+header{
+    float:left;
+    width:1280px;
+	overflow:hidden;
+}
+#topbar, #bottombar{
+    float:left;
+    width:1280px;
+	height:3px;
+	overflow:hidden;
+}
+#bottombar{
+	margin-top:40px;
+}
+#container {
+	background-color: #fff;
+	float:left;
+	width:1280px;
+	border-radius:0px 0px 0px 0px;
+}
+#galleryholder{
+	padding: 15px 0px 15px 0px;
+	float:left;
+	width:1280px;
+}
+#loader-panel{
+	height:800px;
+	width:1280px;
+	text-align:center;
+	vertical-align:middle;
+	position:absolute;
+	top:50%;
+}
+footer {
+	clear: both;
+	background-color:inherit;
+	color: #7a7a7a;
+	margin: 0 auto;
+	padding: 10px 20px 40px;
+	text-align: left;
+}
+#footer-left{
+	float:left;
+	width:50%;
+}
+#facebook{
+	padding:0px;
+	clear: left;
+	margin:0px 0px 10px;
+    position: relative;
+	float:left;
+	width:850px;
+}
+#footer-right{
+	float:right;
+	width:50%;
+}
+#contact{
+	float:right;
+}
+#copyright{
+	float:left;
+}
+#captionToggle a {
+	float: right;
+	display: block;
+	margin: 30px 0px 15px 0px;
+}
+div.caption-container {
+
+	
+}
+span.image-caption {
+	display: block;
+	position: absolute;
+}
+div.caption {
+	padding: 12px;
+	color: #ccc;
+}
+div.caption a {
+	color: #fff;
+}
+.caption{
+	background-color:inherit;
+}
+.image-desc, .image-title{
+background-color:none !important;
+}

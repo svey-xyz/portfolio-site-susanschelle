@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=9"> 
+<meta name="viewport" content="width = 1280" /> 
+<meta name="generator" content="redrex Base Web Gallery 1.7" >
+<title>susan schelle</title>
+
+<link rel="stylesheet" type="text/css" media="screen" title="Custom Settings" href="content/custom.css" /> 
+<link rel="stylesheet" href="./resources/css/reset.css" type="text/css" />
+<link rel="stylesheet" href="./resources/css/style.css" type="text/css" />
+<link rel="stylesheet" href="./resources/css/galleriffic.css" type="text/css" />
+<link rel="stylesheet" href="./resources/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,400italic' rel='stylesheet' type='text/css'><script type="text/javascript" src="./resources/js/jquery.js"></script>
+<script type="text/javascript" src="./resources/js/jquery.history.js"></script>
+<script type="text/javascript" src="./resources/js/jquery.opacityrollover.js"></script>
+<script type="text/javascript" src="./resources/js/jquery.galleriffic.js"></script>
+	<script type="text/javascript">
+	var jqredrex=jQuery.noConflict();
+	
+	// Checking for Retina Devices
+	function isRetina() {
+	var query = '(-webkit-min-device-pixel-ratio: 1.5),\
+	(min--moz-device-pixel-ratio: 1.5),\
+	(-o-min-device-pixel-ratio: 3/2),\
+	(min-device-pixel-ratio: 1.5),\
+	(min-resolution: 144dpi),\
+	(min-resolution: 1.5dppx)';
+	
+	if (window.devicePixelRatio > 1 || (window.matchMedia && window.matchMedia(query).matches)) {
+			return true;
+		
+	}
+	return false;
+	}
+
+		jQuery(document).ready(function(jqredrex) {
+	
+	
+		if (window.isRetina()) {
+		var images = document.getElementsByTagName('img');
+		//images =+ document.getElementsByClassName('thumb');
+		for (var i = 0, j = images.length; i < j; i++) {
+		if(jqredrex(images[i]).hasClass('pngDelayDisplay') || jqredrex(images[i]).hasClass('thumb')){
+		//no retina 
+		}else{
+		var image = images[i],
+		src = image.src,
+		lastSlash = src.lastIndexOf('/'),
+		path = src.substring(0, lastSlash),
+		file = src.substring(lastSlash + 1),
+		retinaSrc = 'images/@2x/' + file;
+		image.src = retinaSrc;
+		}
+		}
+		
+		//thumbs
+		var images = document.getElementsByClassName('thumb');
+		for (var i = 0, j = images.length; i < j; i++) {
+			
+		var image = images[i];
+		var url = image.style.backgroundImage;
+		url = url.replace('url(', "").replace(')', "");
+		//alert(url);
+		lastSlash = url.lastIndexOf('/');
+		path = url.substring(0, lastSlash);
+		file = url.substring(lastSlash + 1);
+		retinaSrc = 'images/@2xthumbs/' + file;
+	
+		image.style.backgroundImage='url("content/'+ retinaSrc +')';
+		}
+		}
+			
+		
+		
+						
+			// We only want these styles applied when javascript is enabled
+						jqredrex('div.navigation').css({'width' : '120', 'float' : 'left'});
+						
+			jqredrex('div.content').css('display', 'block');
+
+			// Initially set opacity on thumbs and add
+			// additional styling for hover effect on thumbs
+			var onMouseOutOpacity = 0.67;
+			jqredrex('#thumbs ul.thumbs li').opacityrollover({
+				mouseOutOpacity:   onMouseOutOpacity,
+				mouseOverOpacity:  1.0,
+				fadeSpeed:         'fast',
+				exemptionSelector: '.selected'
+			});
+			
+						var captionOpacity = 0.9;
+										// Enable toggling of the caption
+				
+				jqredrex('#captionToggle a').click(function(e) {
+				//alert("clicked");
+					var link = jqredrex(this);
+
+					var isOff = link.hasClass('off');
+					var removeClass = isOff ? 'off' : 'on';
+					var addClass = isOff ? 'on' : 'off';
+					var rz = isOff ? 'zoff' : 'zon';
+					var az = isOff ? 'zon' : 'zoff';
+					var linkText = isOff ? 'Hide Caption <i class="fa fa-comment"></i>' : 'Show Caption <i class="fa fa-comment"></i>';
+					var linkTitleText = isOff ? 'Hide Caption' : 'Show Caption';
+					captionOpacity = isOff ? 0.9 : 0.0;
+
+					link.removeClass(removeClass).addClass(addClass).html(linkText).attr('title', linkTitleText);
+					jqredrex('#caption span.image-caption').fadeTo(1000, captionOpacity);
+					
+					e.preventDefault();
+				});
+						// Initialize Advanced Galleriffic Gallery
+			var gallery = jqredrex('#thumbs').galleriffic({
+				delay:                     2500,
+				numThumbs:                 7,
+				preloadAhead:              15,
+				enableTopPager:            false,
+				enableBottomPager:         false,
+				maxPagesToShow:            1,
+				imageContainerSel:         '#slideshow',
+				controlsContainerSel:      '#controls',
+				captionContainerSel:       '#caption',
+				loadingContainerSel:       '#loading',
+				renderSSControls:          false,
+				renderNavControls:         false,
+				playLinkText:              '<i class="fa fa-play"></i> Slideshow',
+				pauseLinkText:             '<i class="fa fa-pause"></i> Slideshow',
+				playLinkTextTitle:         'Play',
+				pauseLinkTextTitle:        'Pause',
+				prevLinkText:              '<i class="fa fa-chevron-left"></i> Previous',
+				nextLinkText:              'Next <i class="fa fa-chevron-right"></i>',
+				prevLinkTextTitle:         'Previous',
+				nextLinkTextTitle:         'Next',
+				nextPageLinkText:          'Next <i class="fa fa-chevron-right"></i>',
+				prevPageLinkText:          '<i class="fa fa-chevron-left"></i> Previous',
+				nextPageLinkTextTitle:     'Next Page',
+				prevPageLinkTextTitle:     'Previous Page',
+				enableHistory:              true,//DO NOT DISABLE
+				autoStart:                 false,
+				syncTransitions:           true,
+				defaultTransitionDuration: 900,
+				onSlideChangeOut:             function(prevIndex) {
+					// 'this' refers to the gallery, which is an extension of $('#thumbs')
+					this.find('ul.thumbs').children()
+						.eq(prevIndex).fadeTo('fast', onMouseOutOpacity);
+				},
+				onSlideChangeIn:              function(nextIndex) {
+					this.find('ul.thumbs').children()
+						.eq(nextIndex).fadeTo('fast', 1.0);
+				},
+				onPageTransitionOut:       function(callback) {
+					this.fadeTo('fast', 0.0, callback);
+				},
+				onPageTransitionIn:        function() {
+					this.fadeTo('fast', 1.0);
+				},
+				onTransitionOut:           function(slide, caption, isSync, callback) {
+					slide.fadeTo(this.getDefaultTransitionDuration(isSync), 0.0, callback);
+					caption.fadeTo(this.getDefaultTransitionDuration(isSync), 0.0);
+				},
+				onTransitionIn:            function(slide, caption, isSync) {
+					var duration = this.getDefaultTransitionDuration(isSync);
+					slide.fadeTo(duration, 1.0);
+					
+					// Position the caption at the bottom of the image and set its opacity
+					var slideImage = slide.find('img');
+					//alert(slideImage.outerHeight());
+					var offset = 0;
+					var offset2 = 0;
+					var bottomoffset = 0;
+
+				if(slideImage.width() == slide.width() ) {
+					offset = 2;
+						//offset = ((2*2) -2);
+				}else if(slideImage.width() == slide.width()-2){
+				offset = 2;
+					}else{
+				offset = 0
+				}
+
+					
+					caption.width(slideImage.width())
+						.css({
+							'bottom' : (Math.ceil((slide.height() - slideImage.outerHeight()))+2)-200/2 - (bottomoffset-(2-1)),
+							'left' : (((((slide.width() - (slideImage.width()))) / 2) + ((slideImage.outerWidth()) - slideImage.width()) )-2*2)+offset - offset2
+						})
+						.fadeTo(duration, captionOpacity);
+				}
+
+			});
+				function pageload(hash) {
+					// alert("pageload: " + hash);
+					// hash doesn't contain the first # character.
+					if(hash) {
+						jqredrex.galleriffic.gotoImage(hash);
+					} else {
+						//gallery.gotoIndex(0);
+					}
+				}
+
+				// Initialize history plugin.
+				// The callback is called at once by present location.hash. 
+				jqredrex.history.init(pageload);
+
+				// set onlick event for buttons using the jQuery 1.3 live method
+				jqredrex("a[rel='history']").live('click', function(e) {
+					if (e.button != 0) return true;
+
+					var hash = this.href;
+					hash = hash.replace(/^.*#/, '');
+
+					// moves to a new page. 
+					// pageload is called at once. 
+					// hash don't contain "#", "?"
+					jqredrex.history.load(hash);
+
+					return false;
+				});
+
+				jqredrex('#loader-panel').hide();
+				jqredrex('#container').show();
+		});
+				
+		window.AgMode = "publish";
+</script>
+<script type="text/javascript" src="./resources/js/live_update.js">
+</script>
+<!-- We only want the thunbnails to display when javascript is disabled -->
+<script type="text/javascript">
+	document.write('<style>.noscript { display: none; }</style>');
+</script>
+
+<style type="text/css">
+		#caption span{
+		border-radius: 0px !important;
+	}
+			#caption span{
+		border-bottom-right-radius: 0px !important;
+		border-bottom-left-radius: 0px !important;
+	}
+		
+		
+		
+</style>
+
+
+
+
+			
+<!--[if lte IE 9]>
+<script src="./resources/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 7.]> <script defer type="text/javascript" src="./resources/js/pngfix.js"></script> 
+<![endif]-->
+</head>
+
+<body>
+<!--Tracking Code-->
+		
+
+
+<div id="wrapper">
+
+  <header  >
+	<div id="sitetitle">
+  
+      <div id="model.nonCSS.idplateEnabled">
+        <div class="logo">
+        <a href="./../../../gallerywork.html">
+        <img width="248" height="24" class="pngDelayDisplay" src="content/logo.png" alt="Logo">
+        </a>
+         </div><!--End of Logo-->
+      </div><!--End of idplateEnabled-->
+
+  
+  
+    <h1 onClick="clickTarget( this, 'metadata.siteTitle.value' );" id="metadata.siteTitle.value" class="siteTitleTextColor"></h1>
+
+	</div><!--End of sitetitle-->
+	</header><!--End of header-->
+	
+
+        
+    <div id="loader-panel" class="noscript">
+  <i class="fa fa-spinner fa-5x fa-spin"></i>
+  </div>
+    <section id="container" style="display:none;" class="noscript">
+    	<div id="galleryholder">
+			<div id="gallery" class="content">
+				<div id="controls" class="controls"></div>
+																<div class="slideshow-container">
+				
+					<div id="loading" class="loader"><i class="fa fa-spinner fa-5x fa-spin"></i></div>
+					<div id="slideshow" class="slideshow"></div>
+					<div id="caption" class="caption-container"></div>
+				</div>
+															</div>
+			<!--<div class="clear"></div> -->
+			<div id="thumbs" class="navigation">
+				<ul class="thumbs noscript">
+					                        												<li>
+							<a class="thumbnail" href="content/images/large/blue_screen_-1.jpg" title="">
+								<img src="resources/images/imgthumb.gif" style=" background-image:url('content/images/thumb/blue_screen_-1.jpg'); overflow:hidden; width:100px; height:100px; background-position:50% 50%;" width="0" height="0" id="Img1" class="thumb" alt="" />
+							</a>
+							<div class="caption">
+								<div class="image-title"></div>
+								<div class="image-desc">blue screen, 2007 -pigment jet print on dibond 44"x79"</div>
+							</div>
+						</li>
+												<li>
+							<a class="thumbnail" href="content/images/large/blue_screen_-2.jpg" title="">
+								<img src="resources/images/imgthumb.gif" style=" background-image:url('content/images/thumb/blue_screen_-2.jpg'); overflow:hidden; width:100px; height:100px; background-position:50% 50%;" width="0" height="0" id="Img1" class="thumb" alt="" />
+							</a>
+							<div class="caption">
+								<div class="image-title"></div>
+								<div class="image-desc">blue screen, 2007 -pigment jet print on dibond 44"x79"</div>
+							</div>
+						</li>
+												<li>
+							<a class="thumbnail" href="content/images/large/blue_screen_-3.jpg" title="">
+								<img src="resources/images/imgthumb.gif" style=" background-image:url('content/images/thumb/blue_screen_-3.jpg'); overflow:hidden; width:100px; height:100px; background-position:50% 50%;" width="0" height="0" id="Img1" class="thumb" alt="" />
+							</a>
+							<div class="caption">
+								<div class="image-title"></div>
+								<div class="image-desc">blue screen, 2007 -pigment jet print on dibond 44"x79"</div>
+							</div>
+						</li>
+												<li>
+							<a class="thumbnail" href="content/images/large/blue_screen_-4.jpg" title="">
+								<img src="resources/images/imgthumb.gif" style=" background-image:url('content/images/thumb/blue_screen_-4.jpg'); overflow:hidden; width:100px; height:100px; background-position:50% 50%;" width="0" height="0" id="Img1" class="thumb" alt="" />
+							</a>
+							<div class="caption">
+								<div class="image-title"></div>
+								<div class="image-desc">blue screen, 2007 -pigment jet print on dibond 44"x79"</div>
+							</div>
+						</li>
+												<li>
+							<a class="thumbnail" href="content/images/large/blue_screen_-5.jpg" title="">
+								<img src="resources/images/imgthumb.gif" style=" background-image:url('content/images/thumb/blue_screen_-5.jpg'); overflow:hidden; width:100px; height:100px; background-position:50% 50%;" width="0" height="0" id="Img1" class="thumb" alt="" />
+							</a>
+							<div class="caption">
+								<div class="image-title"></div>
+								<div class="image-desc">blue screen, 2007 -pigment jet print on dibond 44"x79"</div>
+							</div>
+						</li>
+												<li>
+							<a class="thumbnail" href="content/images/large/blue_screen_-6.jpg" title="">
+								<img src="resources/images/imgthumb.gif" style=" background-image:url('content/images/thumb/blue_screen_-6.jpg'); overflow:hidden; width:100px; height:100px; background-position:50% 50%;" width="0" height="0" id="Img1" class="thumb" alt="" />
+							</a>
+							<div class="caption">
+								<div class="image-title"></div>
+								<div class="image-desc">blue screen, 2007 -pigment jet print on dibond 44"x79"</div>
+							</div>
+						</li>
+												<li>
+							<a class="thumbnail" href="content/images/large/blue_screen_-7.jpg" title="">
+								<img src="resources/images/imgthumb.gif" style=" background-image:url('content/images/thumb/blue_screen_-7.jpg'); overflow:hidden; width:100px; height:100px; background-position:50% 50%;" width="0" height="0" id="Img1" class="thumb" alt="" />
+							</a>
+							<div class="caption">
+								<div class="image-title"></div>
+								<div class="image-desc">blue screen, 2007 -pigment jet print on dibond 44"x79"</div>
+							</div>
+						</li>
+												<li>
+							<a class="thumbnail" href="content/images/large/blue_screen_-8.jpg" title="">
+								<img src="resources/images/imgthumb.gif" style=" background-image:url('content/images/thumb/blue_screen_-8.jpg'); overflow:hidden; width:100px; height:100px; background-position:50% 50%;" width="0" height="0" id="Img1" class="thumb" alt="" />
+							</a>
+							<div class="caption">
+								<div class="image-title"></div>
+								<div class="image-desc">blue screen, 2007 -pigment jet print on dibond 44"x79"</div>
+							</div>
+						</li>
+												<li>
+							<a class="thumbnail" href="content/images/large/blue_screen_-9.jpg" title="">
+								<img src="resources/images/imgthumb.gif" style=" background-image:url('content/images/thumb/blue_screen_-9.jpg'); overflow:hidden; width:100px; height:100px; background-position:50% 50%;" width="0" height="0" id="Img1" class="thumb" alt="" />
+							</a>
+							<div class="caption">
+								<div class="image-title"></div>
+								<div class="image-desc">blue screen, 2007 -pigment jet print on dibond 44"x79"</div>
+							</div>
+						</li>
+										</ul>
+			</div>
+
+		</div><!-- End of gallery -->
+
+</section><!--End of Container-->
+	    </div><!--End of Wrapper-->
+<!--fotomoto-->
+	</body>
+</html>

@@ -1,0 +1,272 @@
+.copyrightTextColor {
+  color: #949494 !important;
+  background-color: inherit;
+}
+
+div.pagination a, div.pagination span.ellipsis {
+  border-color: #FFFFFF !important;
+}
+
+#previewFull {
+  background-color: #666666 !important;
+  width: 1030px !important;
+  color: inherit;
+}
+
+div.slideshow a.advance-link {
+  width: 1004px !important;
+}
+
+.image-desc {
+  color: #F2F2F2 !important;
+  background-color: inherit;
+}
+
+.siteTitleTextColor {
+  color: #F2F2F2 !important;
+  background-color: inherit;
+}
+
+#previewImage {
+  maxSize3: 1000.00 !important;
+  maxSize2: 120.00 !important;
+  maxSize: 1000.00 !important;
+}
+
+body {
+  background-color: #8D8D8D !important;
+  color: inherit;
+}
+
+.image-title {
+  color: #F2F2F2 !important;
+  background-color: inherit;
+}
+
+.logo {
+  display: inherit !important;
+}
+
+#loading {
+  color: #494949 !important;
+  background-color: inherit;
+}
+
+.preview {
+  border: 0px solid #000000 !important;
+}
+
+div.pagination a, div.pagination span.ellipsis {
+  color: #494949 !important;
+  background-color: inherit;
+}
+
+#container {
+  background-color: #8D8D8D !important;
+  color: inherit;
+}
+
+div.slideshow img {
+  border-width: 2px !important;
+}
+
+#bottombar {
+  background-color: #8D8D8D !important;
+  color: inherit;
+}
+
+#thumbs {
+  margin-left: 20px !important;
+}
+
+.content {
+  float: right !important;
+}
+
+div.pagination a:hover {
+  color: #FFFFFF !important;
+  background-color: inherit;
+}
+
+ul.thumbs li.selected img {
+  border-color: #494949 !important;
+}
+
+.thumb {
+  border-radius: 0px !important;
+}
+
+h1 {
+  font-size: 20px !important;
+}
+
+.content {
+  margin: 0px !important;
+}
+
+div.pagination span.current {
+  border-color: #494949 !important;
+}
+
+.image-desc {
+  font-size: 16px !important;
+}
+
+ul.thumbs img {
+  border: none !important;
+}
+
+.pause {
+  color: #494949 !important;
+  background-color: inherit;
+}
+
+div.slideshow img {
+  border-color: #8D8D8D !important;
+}
+
+.content {
+  width: 1004px !important;
+}
+
+.FotomotoToolbarClass a {
+  color: #494949 !important;
+  background-color: inherit;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.content {
+  padding-right: 50px !important;
+}
+
+div.pagination a:hover {
+  background-color: #494949 !important;
+  color: inherit;
+}
+
+div.pagination span.current {
+  background-color: #494949 !important;
+  color: inherit;
+}
+
+div.pagination a, div.pagination span.ellipsis {
+  background-color: #FFFFFF !important;
+  color: inherit;
+}
+
+div.pagination span.current {
+  color: #FFFFFF !important;
+  background-color: inherit;
+}
+
+.slideshow-container {
+  margin-top: 0px !important;
+}
+
+.loader {
+  width: 1000px !important;
+}
+
+div.slideshow a.advance-link {
+  height: 500px !important;
+}
+
+.slideshow-container {
+  height: 500px !important;
+}
+
+body {
+  font-size: 12px !important;
+}
+
+.image-desc {
+}
+
+#sitetitle {
+  border-bottom: none !important;
+}
+
+.emptyThumbnail {
+}
+
+#liveUpdateSiteTitle {
+}
+
+.FotomotoToolbarClass {
+  color: #494949 !important;
+  background-color: inherit;
+}
+
+#stage2 {
+  width: 1030px !important;
+}
+
+.itemNumber {
+  display: inherit !important;
+  color: #9C9C9C !important;
+  background-color: inherit;
+}
+
+#caption span {
+  background-color: #8D8D8D !important;
+  color: inherit;
+}
+
+.image-title {
+  font-size: 14px !important;
+}
+
+.pagination a, .pagination span {
+  border-radius: 4px !important;
+}
+
+div.pagination a:hover {
+  border-color: #494949 !important;
+}
+
+div.slideshow img {
+  border-radius: 0px !important;
+}
+
+#captionToggle a {
+  color: #494949 !important;
+  background-color: inherit;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.footerTextColor {
+  color: #F2F2F2 !important;
+  background-color: inherit;
+}
+
+.play {
+  color: #494949 !important;
+  background-color: inherit;
+}
+
+div.caption {
+  border-radius: -2px !important;
+}
+
+#topbar {
+  background-color: #8D8D8D !important;
+  color: inherit;
+}
+
+.image-title {
+}
+
+ul.thumbs li {
+  margin: 10px !important;
+}
+
+.textColor {
+  color: #494949 !important;
+  background-color: inherit;
+}
